@@ -1,0 +1,156 @@
+=pod
+
+=head1 NAME
+
+AnyEvent::HipChat - Build application to Atlassian Hipchat
+
+=head1 SYNOPSIS
+
+    my $hp = AnyEvent::HipChat->new(
+        webhook_iface => $interface,
+        webhook_port  => $port,
+        data_storage  => <storage class, optional>,
+        descriptor    => <hipchat capabilities descriptor>
+    );
+
+    $hp->on(
+       ready => sub {
+           my $store = shift;
+           my $room_id = $store->room_id;
+           my $api = $store->api;
+           .... #doing something very useful here
+       }
+    );
+
+    $hp->start;
+
+=head1 DESCRIPTION
+
+Framework to build application to Atlassian Hipchat platform.
+It's contain two major parts: L<AnyEvent::HipChat::Api> - api client library,
+L<AnyEvent::HipChat> - hipchat http callback handler.
+
+=head1 USAGE
+
+Basic usage scenario
+
+=over
+
+=item setup
+
+Provide interface, prort and capabilities descriptor to L<AnyEvent::HipChat> constructor
+
+=item on->ready
+
+Setup some callbacks with very useful scenario via B<ready> event
+
+=item setup_callback
+
+Setup some user defined callback handlers (e.g. for room message processing)
+
+=item start
+
+Make L<AnyEvent::HipChat> framework to listen hipchat callback.
+
+=back
+
+=head1 METHODS
+
+=head2 new(%args)
+
+Constructor, provide following options:
+
+=over
+
+=item webhook_iface, required
+
+Listening interface address, B<required>
+There is no default, and it MUST be real
+network interface no 0.0.0.0.
+
+=item webhook_port
+
+B<AnyEvent::Hipchat> port, default B<65500>
+
+=item httpd_args
+
+Something that you wand to send to B<AnyEvent::HTTPD->new(...)>
+
+=item descriptor
+
+Hipchat capability descriptor goes here.
+Note that there is reasonable default
+
+   {
+        name         => ucfirst(lc(Sys::Hostname::hostname)). " hipchat integration",
+        description  => 'An integration that make cool stuff',
+        key          => Sys::Hostname::hostname,
+        links        => { ... },
+        capabilities => {
+            hipchatApiConsumer => {
+                scopes => [
+                    qw/send_message/
+                ]
+            },
+            "installable" => { ... },
+        }
+    };
+
+=item data_storage
+
+Instanse of class that support L<AnyEvent::HipChat::DataStore> interface
+
+=back
+
+=head2 on($event => $sub)
+
+  $hp->on(reday => sub { .... })
+
+Setup new event handler, for now only 'ready' event effectively supported
+
+=head2 setup_callback($sub)
+
+  my $cb_url =
+      $hp->setup_callback(sub {
+          my ($ok, $data, $err) = @_;
+          ...
+      });
+
+  $api->create_room_webhook(
+      url => $cb_url,
+      event => 'room_message',
+      room_id => $room_id,
+      key => $room_hook_key,
+      sub {
+          my ($ok, $data, $err) = @_;
+          ...
+   });
+
+Setup user defined callback
+
+=head2 start()
+
+Register callbacks and run L<AnyEvent::HTTPD> on configured host/port
+
+=head2 scopes()
+
+Get scopes from capabilities descriptor
+
+=head1 api, store, event_emitter, httpd, descriptor
+
+Various accessors
+
+=head1 AUTHORS
+
+pru.mike@gmail.com
+
+=head1 LICENSE
+
+CC0 1.0 Universal
+
+=head1 SEE ALSO
+
+B<examples/>, L<AnyEvent::HipChat::Api>,
+L<AnyEvent::HipChat::EventEmitter>, L<AnyEvent::HTTPD>,
+L<AnyEvent::HipChat::DataStore>
+

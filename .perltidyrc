@@ -1,0 +1,10 @@
+ -l=120 # line length
+ -i=4   # standard indent
+ -ce    # cuddly elses
+ -pt=2  # parentheses should be tight
+ -sot   # stack opening tokens
+ -sbt=2 # square brackets tightness
+ -nsfs  # no space before "for" loop semicolon
+ -nolq  # don't outdent long quotes
+ -b     # edit file in place, leave .bak file
+ -msc=2 # two spaces for post-line comments (not 4)

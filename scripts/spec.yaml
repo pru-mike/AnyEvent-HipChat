@@ -1,0 +1,762 @@
+---
+add_member:
+  descr: "Adds a member to a private room and sends member's unavailable presence to all room members asynchronously.Authentication required, with scope admin_room. Accessible by group clients, room clients, users."
+  doc_url: https://www.hipchat.com/docs/apiv2/method/add_member
+  endpoint: /v2/room/%s/member/%s
+  method: PUT
+  path_params:
+    - room_id
+    - user_id
+addon_ui_update:
+  body_params:
+    - glance
+  descr: Push addon ui update to a groupAuthentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/addon_ui_update
+  endpoint: /v2/addon/ui
+  method: POST
+create_global_action:
+  body_params:
+    - target
+    - location
+    - key
+    - name
+  descr: Create a global action.Dynamically created actions have the following restrictions:You can only create 10 global actionsYou cannot modify an action that was declared in the descriptorAuthentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_global_action
+  endpoint: /v2/extension/action/%s
+  method: PUT
+  path_params:
+    - key
+create_global_dialog:
+  body_params:
+    - url
+    - key
+    - title
+  descr: Create a global dialog.Dynamically created dialogs have the following restrictions:You can only create 10 global dialogsYou cannot modify a dialog that was declared in the descriptorAuthentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_global_dialog
+  endpoint: /v2/extension/dialog/%s
+  method: PUT
+  path_params:
+    - key
+create_global_external_page:
+  body_params:
+    - url
+    - key
+  descr: Create a global external page.Dynamically created external pages have the following restrictions:You can only create 10 global external pagesYou cannot modify an external page that was declared in the descriptorAuthentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_global_external_page
+  endpoint: /v2/extension/externalPage/%s
+  method: PUT
+  path_params:
+    - key
+create_global_glance:
+  body_params:
+    - key
+    - icon
+    - name
+  descr: Create a global glance.Dynamically created glances have the following restrictions:You can only create 10 global glancesYou cannot modify a glance that was declared in the descriptorAuthentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_global_glance
+  endpoint: /v2/extension/glance/%s
+  method: PUT
+  path_params:
+    - key
+create_global_web_panel:
+  body_params:
+    - name
+    - url
+    - location
+    - key
+  descr: Create a global web panel.Dynamically created web panel have the following restrictions:You can only create 10 global web panelsYou cannot modify a web panel that was declared in the descriptorAuthentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_global_web_panel
+  endpoint: /v2/extension/webPanel/%s
+  method: PUT
+  path_params:
+    - key
+create_global_webhook:
+  body_params:
+    - url
+    - key
+    - event
+  descr: 'Create a global webhook.Dynamically created webhooks have the following restrictions:You can only create 10 global webhooksYou cannot modify a webhook that was declared in the descriptorAuthentication required, with scope view_messages. Accessible by group clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_global_webhook
+  endpoint: /v2/extension/webhook/%s
+  method: PUT
+  path_params:
+    - key
+create_integration_link:
+  body_params:
+    - target
+    - ttl
+  descr: Create a link target through which an integration can be reached through HipChat. A token will be returned which is used to access the linkAuthentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_integration_link
+  endpoint: /v2/addon/link
+  method: POST
+create_room:
+  body_params:
+    - name
+  descr: 'Creates a new room.Authentication required, with scope manage_rooms. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_room
+  endpoint: /v2/room
+  method: POST
+create_room_action:
+  body_params:
+    - target
+    - location
+    - key
+    - name
+  descr: 'Create an action.Dynamically created actions have the following restrictions:You can only create 10 actions in a roomYou cannot modify an action that was declared in the descriptorAuthentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_room_action
+  endpoint: /v2/room/%s/extension/action/%s
+  method: PUT
+  path_params:
+    - room_id
+    - key
+create_room_dialog:
+  body_params:
+    - url
+    - key
+    - title
+  descr: 'Create a dialog.Dynamically created dialogs have the following restrictions:You can only create 10 dialogs in a roomYou cannot modify a dialog that was declared in the descriptorAuthentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_room_dialog
+  endpoint: /v2/room/%s/extension/dialog/%s
+  method: PUT
+  path_params:
+    - room_id
+    - key
+create_room_external_page:
+  body_params:
+    - url
+    - key
+  descr: 'Create an external page.Dynamically created external pages have the following restrictions:You can only create 10 external pages in a roomYou cannot modify an external page that was declared in the descriptorAuthentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_room_external_page
+  endpoint: /v2/room/%s/extension/externalPage/%s
+  method: PUT
+  path_params:
+    - room_id
+    - key
+create_room_glance:
+  body_params:
+    - key
+    - icon
+    - name
+  descr: 'Create a glance.Dynamically created glances have the following restrictions:You can only create 10 glances in a roomYou cannot modify a glance that was declared in the descriptorAuthentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_room_glance
+  endpoint: /v2/room/%s/extension/glance/%s
+  method: PUT
+  path_params:
+    - room_id
+    - key
+create_room_web_panel:
+  body_params:
+    - name
+    - url
+    - location
+    - key
+  descr: 'Create a web panel.Dynamically created web panels have the following restrictions:You can only create 10 web panels in a roomYou cannot modify a web panel that was declared in the descriptorAuthentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_room_web_panel
+  endpoint: /v2/room/%s/extension/webPanel/%s
+  method: PUT
+  path_params:
+    - room_id
+    - key
+create_room_webhook:
+  body_params:
+    - url
+    - key
+    - event
+  descr: 'Create a webhook.Dynamically created webhooks have the following restrictions:You can only create 10 webhooks in a roomYou cannot modify a webhook that was declared in the descriptorAuthentication required, with scope view_messages. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_room_webhook
+  endpoint: /v2/room/%s/extension/webhook/%s
+  method: PUT
+  path_params:
+    - room_id
+    - key
+create_user:
+  body_params:
+    - name
+    - email
+  descr: 'Creates a new user.Authentication required, with scope admin_group. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_user
+  endpoint: /v2/user
+  method: POST
+create_webhook:
+  body_params:
+    - url
+    - event
+  descr: 'Deprecated: Please use Create room webhook instead, which preserves extensions across add-on updates and requires only the view_messages scope.Authentication required, with scope admin_room. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/create_webhook
+  endpoint: /v2/room/%s/webhook
+  method: POST
+  path_params:
+    - room_id
+delete_global_action:
+  descr: Delete a global action. You cannot delete an action which was declared in the descriptor.Authentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_global_action
+  endpoint: /v2/extension/action/%s
+  method: DELETE
+  path_params:
+    - key
+delete_global_dialog:
+  descr: Delete a global dialog. You cannot delete a dialog which was declared in the descriptor.Authentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_global_dialog
+  endpoint: /v2/extension/dialog/%s
+  method: DELETE
+  path_params:
+    - key
+delete_global_external_page:
+  descr: Delete a global external page. You cannot delete an external page which was declared in the descriptor.Authentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_global_external_page
+  endpoint: /v2/extension/externalPage/%s
+  method: DELETE
+  path_params:
+    - key
+delete_global_glance:
+  descr: Delete a global glance. You cannot delete a glance which was declared in the descriptor.Authentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_global_glance
+  endpoint: /v2/extension/glance/%s
+  method: DELETE
+  path_params:
+    - key
+delete_global_web_panel:
+  descr: Delete a global web panel. You cannot delete a web panel which was declared in the descriptor.Authentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_global_web_panel
+  endpoint: /v2/extension/webPanel/%s
+  method: DELETE
+  path_params:
+    - key
+delete_global_webhook:
+  descr: Delete a global webhook. You cannot delete a webhook which was declared in the descriptor.Authentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_global_webhook
+  endpoint: /v2/extension/webhook/%s
+  method: DELETE
+  path_params:
+    - key
+delete_group_avatar:
+  descr: 'Delete group avatar.Authentication required, with scope admin_group. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_group_avatar
+  endpoint: /v2/group/%s/avatar
+  method: DELETE
+  path_params:
+    - group_id
+delete_integration_link:
+  descr: Delete a link endpoint by its tokenAuthentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_integration_link
+  endpoint: /v2/addon/link/%s
+  method: DELETE
+  path_params:
+    - token
+delete_photo:
+  descr: 'Delete a user photo. A guest cannot be updated.Authentication required, with scope admin_group. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_photo
+  endpoint: /v2/user/%s/photo
+  method: DELETE
+  path_params:
+    - id
+delete_room:
+  descr: 'Deletes a room and kicks the current participants.Authentication required, with scope manage_rooms. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_room
+  endpoint: /v2/room/%s
+  method: DELETE
+  path_params:
+    - room_id
+delete_room_action:
+  descr: 'Delete an action. You cannot delete an action that was declared in the descriptor.Authentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_room_action
+  endpoint: /v2/room/%s/extension/action/%s
+  method: DELETE
+  path_params:
+    - room_id
+    - key
+delete_room_dialog:
+  descr: 'Delete a dialog. You cannot delete a dialog that was declared in the descriptor.Authentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_room_dialog
+  endpoint: /v2/room/%s/extension/dialog/%s
+  method: DELETE
+  path_params:
+    - room_id
+    - key
+delete_room_external_page:
+  descr: 'Delete an external page. You cannot delete an external page that was declared in the descriptor.Authentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_room_external_page
+  endpoint: /v2/room/%s/extension/externalPage/%s
+  method: DELETE
+  path_params:
+    - room_id
+    - key
+delete_room_glance:
+  descr: 'Delete a glance. You cannot delete a glance that was declared in the descriptor.Authentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_room_glance
+  endpoint: /v2/room/%s/extension/glance/%s
+  method: DELETE
+  path_params:
+    - room_id
+    - key
+delete_room_web_panel:
+  descr: 'Delete a web panel. You cannot delete a web panel that was declared in the descriptor.Authentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_room_web_panel
+  endpoint: /v2/room/%s/extension/webPanel/%s
+  method: DELETE
+  path_params:
+    - room_id
+    - key
+delete_room_webhook:
+  descr: 'Delete a webhook. You cannot delete a webhook that was declared in the descriptor.Authentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_room_webhook
+  endpoint: /v2/room/%s/extension/webhook/%s
+  method: DELETE
+  path_params:
+    - room_id
+    - key
+delete_session:
+  descr: 'Deletes the OAuth session via its associated access_tokenAuthentication required. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_session
+  endpoint: /v2/oauth/token/%s
+  method: DELETE
+  path_params:
+    - access_token
+delete_user:
+  descr: 'Delete a user.Authentication required, with scope admin_group. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_user
+  endpoint: /v2/user/%s
+  method: DELETE
+  path_params:
+    - id
+delete_webhook:
+  descr: 'Deprecated: Please use Delete room webhook instead.Authentication required, with scope admin_room. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/delete_webhook
+  endpoint: /v2/room/%s/webhook/%s
+  method: DELETE
+  path_params:
+    - room_id
+    - webhook_id
+generate_token:
+  descr: Gets an OAuth token for requested grant type. Grant types supported:personalclient_credentialspasswordrefresh_tokenauthorization_codeAuthentication required. Accessible by oauth clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/generate_token
+  endpoint: /v2/oauth/token
+  method: POST
+get_addon_capabilities_schema:
+  descr: 'Gets the addon capabilities descriptor schema Authentication not required. '
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_addon_capabilities_schema
+  endpoint: /v2/capabilities/addon/schema
+  method: GET
+get_all_emoticons:
+  descr: 'Gets all emoticons for the current groupAuthentication required, with scope view_group. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_all_emoticons
+  endpoint: /v2/emoticon
+  method: GET
+get_all_members:
+  descr: 'Gets all members for this private room.Authentication required, with scope view_room. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_all_members
+  endpoint: /v2/room/%s/member
+  method: GET
+  path_params:
+    - room_id
+get_all_participants:
+  descr: 'Gets all participants in this room.Authentication required, with scope view_room. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_all_participants
+  endpoint: /v2/room/%s/participant
+  method: GET
+  path_params:
+    - room_id
+get_all_rooms:
+  descr: 'List non-archived rooms for this group.Authentication required, with scope view_group or view_room. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_all_rooms
+  endpoint: /v2/room
+  method: GET
+get_all_users:
+  descr: 'List all users in the group.Authentication required, with scope view_group. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_all_users
+  endpoint: /v2/user
+  method: GET
+get_all_webhooks:
+  descr: 'Gets all webhooks for this roomAuthentication required, with scope admin_room. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_all_webhooks
+  endpoint: /v2/room/%s/webhook
+  method: GET
+  path_params:
+    - room_id
+get_auto_join_rooms:
+  descr: 'Get the list of rooms a user joins when they log in.Authentication required, with scope view_group. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_auto_join_rooms
+  endpoint: /v2/user/%s/preference/auto-join
+  method: GET
+  path_params:
+    - id
+get_capabilities:
+  descr: 'Gets the capabilities descriptor for HipChat Authentication not required. '
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_capabilities
+  endpoint: /v2/capabilities
+  method: GET
+get_emoticon:
+  descr: 'Get emoticon details.Authentication required, with scope view_group. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_emoticon
+  endpoint: /v2/emoticon/%s
+  method: GET
+  path_params:
+    - emoticon_id
+get_global_action:
+  descr: Retrieve a global action.Authentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_global_action
+  endpoint: /v2/extension/action/%s
+  method: GET
+  path_params:
+    - key
+get_global_dialog:
+  descr: Retrieve a global dialog.Authentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_global_dialog
+  endpoint: /v2/extension/dialog/%s
+  method: GET
+  path_params:
+    - key
+get_global_external_page:
+  descr: Retrieve a global external page.Authentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_global_external_page
+  endpoint: /v2/extension/externalPage/%s
+  method: GET
+  path_params:
+    - key
+get_global_glance:
+  descr: Retrieve a global glance.Authentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_global_glance
+  endpoint: /v2/extension/glance/%s
+  method: GET
+  path_params:
+    - key
+get_global_web_panel:
+  descr: Retrieve a global web panel.Authentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_global_web_panel
+  endpoint: /v2/extension/webPanel/%s
+  method: GET
+  path_params:
+    - key
+get_global_webhook:
+  descr: Retrieve a global webhook.Authentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_global_webhook
+  endpoint: /v2/extension/webhook/%s
+  method: GET
+  path_params:
+    - key
+get_group_avatar:
+  descr: 'Gets a group avatarAuthentication required, with scope view_group. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_group_avatar
+  endpoint: /v2/group/%s/avatar
+  method: GET
+  path_params:
+    - group_id
+get_integration_installable_data:
+  descr: 'Get integration installable data. This resource is only useful for integration installations that provide the integration with the installable data URL (this URL). Will be deleted after first access. Authentication not required. '
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_integration_installable_data
+  endpoint: /v2/addon/%s/installable/%s
+  method: GET
+  path_params:
+    - integration_id
+    - token
+get_photo:
+  descr: 'Gets a user photoAuthentication required, with scope view_group. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_photo
+  endpoint: /v2/user/%s/photo/%s
+  method: GET
+  path_params:
+    - id
+    - size
+get_privatechat_message:
+  descr: 'Fetch one specific message by idAuthentication required, with scope view_messages. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_privatechat_message
+  endpoint: /v2/user/%s/history/%s
+  method: GET
+  path_params:
+    - id
+    - message_id
+get_room:
+  descr: 'Get room details.Authentication required, with scope view_group or view_room. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_room
+  endpoint: /v2/room/%s
+  method: GET
+  path_params:
+    - room_id
+get_room_action:
+  descr: 'Retrieve an action.Authentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_room_action
+  endpoint: /v2/room/%s/extension/action/%s
+  method: GET
+  path_params:
+    - room_id
+    - key
+get_room_dialog:
+  descr: 'Retrieve a dialog.Authentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_room_dialog
+  endpoint: /v2/room/%s/extension/dialog/%s
+  method: GET
+  path_params:
+    - room_id
+    - key
+get_room_external_page:
+  descr: 'Retrieve an external page.Authentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_room_external_page
+  endpoint: /v2/room/%s/extension/externalPage/%s
+  method: GET
+  path_params:
+    - room_id
+    - key
+get_room_glance:
+  descr: 'Retrieve a glance/Authentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_room_glance
+  endpoint: /v2/room/%s/extension/glance/%s
+  method: GET
+  path_params:
+    - room_id
+    - key
+get_room_message:
+  descr: 'Fetch one specific message by idAuthentication required, with scope view_messages. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_room_message
+  endpoint: /v2/room/%s/history/%s
+  method: GET
+  path_params:
+    - room_id
+    - message_id
+get_room_statistics:
+  descr: 'Fetch statistics for this room.Authentication required, with scope view_group or view_room. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_room_statistics
+  endpoint: /v2/room/%s/statistics
+  method: GET
+  path_params:
+    - room_id
+get_room_web_panel:
+  descr: 'Retrieve a web panel.Authentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_room_web_panel
+  endpoint: /v2/room/%s/extension/webPanel/%s
+  method: GET
+  path_params:
+    - room_id
+    - key
+get_room_webhook:
+  descr: 'Retrieve a webhook.Authentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_room_webhook
+  endpoint: /v2/room/%s/extension/webhook/%s
+  method: GET
+  path_params:
+    - room_id
+    - key
+get_session:
+  descr: 'Gets the OAuth session via its associated access_tokenAuthentication required. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_session
+  endpoint: /v2/oauth/token/%s
+  method: GET
+  path_params:
+    - access_token
+get_webhook:
+  descr: 'Deprecated: Please use Get room webhook instead.Authentication required, with scope admin_room. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/get_webhook
+  endpoint: /v2/room/%s/webhook/%s
+  method: GET
+  path_params:
+    - room_id
+    - webhook_id
+group_statistics:
+  descr: "Get a group's details.Authentication required, with scope view_group. Accessible by group clients, users."
+  doc_url: https://www.hipchat.com/docs/apiv2/method/group_statistics
+  endpoint: /v2/group/%s/statistics
+  method: GET
+  path_params:
+    - group_id
+invite_user:
+  descr: 'Invite a user to a public room. This API can only be called using a user token which can be obtained through:Your own Personal API TokenGenerating a token using one of the following grant_types: authorization_code -- This is the authorization step of a 3-legged OAuth 2 flowrefresh_token -- When a 3-legged OAuth token expires, you can request a new one through this grant_typepassword -- This grant_type allows you to request a user token by providing a username/passwordAuthentication required, with scope admin_room. Accessible by users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/invite_user
+  endpoint: /v2/room/%s/invite/%s
+  method: POST
+  path_params:
+    - room_id
+    - user_id
+invite_user_to_group:
+  body_params:
+    - email
+    - name
+  descr: 'Invites a user to join a group.Authentication required, with scope admin_group. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/invite_user_to_group
+  endpoint: /v2/invite/user
+  method: POST
+invoke_integration_link:
+  descr: 'Access an integration link. This provides a GET endpoint to reach the link. Upon receiving a request, a JSON object is POSTed to the integration at the link it has registered. The JSON object contains the client_id for whom the link was registered and the token used to reach the link.This endpoint expects the integration to reply with a JSON response containing a redirect location, to which it will then redirect the response. There is no ability to send content from the integration. Authentication not required. '
+  doc_url: https://www.hipchat.com/docs/apiv2/method/invoke_integration_link
+  endpoint: /v2/addon/link/%s
+  method: GET
+  path_params:
+    - token
+private_message_user:
+  body_params:
+    - message
+  descr: 'Sends a user a private message. This API can only be called using a user token which can be obtained through:Your own Personal API TokenGenerating a token using one of the following grant_types: authorization_code -- This is the authorization step of a 3-legged OAuth 2 flowrefresh_token -- When a 3-legged OAuth token expires, you can request a new one through this grant_typepassword -- This grant_type allows you to request a user token by providing a username/passwordThe message can also be sent as text/plainAuthentication required, with scope send_message. Accessible by users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/private_message_user
+  endpoint: /v2/user/%s/message
+  method: POST
+  path_params:
+    - id
+remove_member:
+  descr: 'Removes a member from a private room.Authentication required, with scope admin_room. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/remove_member
+  endpoint: /v2/room/%s/member/%s
+  method: DELETE
+  path_params:
+    - room_id
+    - user_id
+reply_to_message:
+  body_params:
+    - parentMessageId
+    - message
+  descr: 'Reply to a message in a room.Authentication required, with scope send_message. Accessible by users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/reply_to_message
+  endpoint: /v2/room/%s/reply
+  method: POST
+  path_params:
+    - room_id
+room_addon_ui_update:
+  body_params:
+    - glance
+  descr: 'Push addon ui update to a roomAuthentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/room_addon_ui_update
+  endpoint: /v2/addon/ui/room/%s
+  method: POST
+  path_params:
+    - room_id
+send_message:
+  body_params:
+    - message
+  descr: 'Send a message to a room.Authentication required, with scope send_message. Accessible by users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/send_message
+  endpoint: /v2/room/%s/message
+  method: POST
+  path_params:
+    - room_id
+send_room_notification:
+  body_params:
+    - message
+  descr: 'Send a message to a room. This resource accepts three different content-types:application/x-www-form-urlencoded - If you send as a form-encoded POST, the form fields will be mapped to their corresponding JSON properties.text/plain - If you send with the text/plain content-type, the payload will be treated as a plain text message with a default background color of yellow and the notify flag set to false.text/html - If you send with the text/html content-type, the payload will be treated as an HTML message with a default background color of yellow and the notify flag set to false.application/json - If you send with the application/json content-type, the payload will be treated as JSON with the expected format described in the Requested Body section below.Authentication required, with scope send_notification. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/send_room_notification
+  endpoint: /v2/room/%s/notification
+  method: POST
+  path_params:
+    - room_id
+set_topic:
+  body_params:
+    - topic
+  descr: "Set a room's topic. Useful for displaying statistics, important links, server status, you name it!Authentication required, with scope admin_room. Accessible by group clients, room clients, users."
+  doc_url: https://www.hipchat.com/docs/apiv2/method/set_topic
+  endpoint: /v2/room/%s/topic
+  method: PUT
+  path_params:
+    - room_id
+share_link_with_room:
+  body_params:
+    - link
+  descr: 'Share a link with the room.Authentication required, with scope send_message. Accessible by users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/share_link_with_room
+  endpoint: /v2/room/%s/share/link
+  method: POST
+  path_params:
+    - room_id
+share_link_with_user:
+  body_params:
+    - link
+  descr: 'Share a link with another user.Authentication required, with scope send_message. Accessible by users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/share_link_with_user
+  endpoint: /v2/user/%s/share/link
+  method: POST
+  path_params:
+    - id
+update_group_avatar:
+  body_params:
+    - avatar
+  descr: 'Update a group avatar.Authentication required, with scope admin_group. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/update_group_avatar
+  endpoint: /v2/group/%s/avatar
+  method: PUT
+  path_params:
+    - group_id
+update_photo:
+  body_params:
+    - photo
+  descr: 'Update a user photo. A guest cannot be updated.Authentication required, with scope admin_group. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/update_photo
+  endpoint: /v2/user/%s/photo
+  method: PUT
+  path_params:
+    - id
+update_room:
+  body_params:
+    - name
+    - topic
+    - owner
+  descr: 'Updates a room.Authentication required, with scope admin_room. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/update_room
+  endpoint: '/v2/room/{room_id_or_name}'
+  method: PUT
+update_user:
+  body_params:
+    - name
+    - mention_name
+    - email
+  descr: 'Update a user. A guest cannot be updated.Authentication required, with scope admin_group. Accessible by group clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/update_user
+  endpoint: /v2/user/%s
+  method: PUT
+  path_params:
+    - id
+user_addon_ui_update:
+  body_params:
+    - glance
+  descr: Push addon ui update to a userAuthentication required. Accessible by group clients.
+  doc_url: https://www.hipchat.com/docs/apiv2/method/user_addon_ui_update
+  endpoint: /v2/addon/ui/user/%s
+  method: POST
+  path_params:
+    - user_id
+user_in_room_addon_ui_update:
+  body_params:
+    - glance
+  descr: 'Push addon ui update to a single user in a roomAuthentication required. Accessible by group clients, room clients.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/user_in_room_addon_ui_update
+  endpoint: /v2/addon/ui/room/%s/user/%s
+  method: POST
+  path_params:
+    - room_id
+    - user_id
+view_group:
+  descr: "Get a group's details.Authentication required, with scope view_group. Accessible by group clients, users."
+  doc_url: https://www.hipchat.com/docs/apiv2/method/view_group
+  endpoint: /v2/group/%s
+  method: GET
+  path_params:
+    - group_id
+view_privatechat_history:
+  descr: "Fetch chat history for the 1:1 chat with the user identified by idoremail.NOTE:According to ISO-8601 the plus sign '+' is used for specifying the time offset from UTC. But '+' in a GET query is recognized as a whitespace by the API HTTP-server. For specifying the time offset, replace the character by '%2B' in the GET query.To fetch the history before '2015-06-16T15:33:30+01:00' you would use the query 'http://hipchat.com/v2/user/513/history?date=2015-06-16T15:33:30%2B01:00' (plus is replaced by '%2B').It's possible to specify the date using UNIX timestamp format: 'http://hipchat.com/v2/user/513/history?date=1434465210'.Same thing for the end-date parameter.Authentication required, with scope view_messages. Accessible by users."
+  doc_url: https://www.hipchat.com/docs/apiv2/method/view_privatechat_history
+  endpoint: /v2/user/%s/history
+  method: GET
+  path_params:
+    - id
+view_recent_privatechat_history:
+  descr: 'Fetch latest chat history for the 1:1 chat with the user identified by idoremail.Authentication required, with scope view_messages. Accessible by users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/view_recent_privatechat_history
+  endpoint: /v2/user/%s/history/latest
+  method: GET
+  path_params:
+    - id
+view_recent_room_history:
+  descr: 'Fetch latest chat history for this room.Authentication required, with scope view_messages. Accessible by group clients, room clients, users.'
+  doc_url: https://www.hipchat.com/docs/apiv2/method/view_recent_room_history
+  endpoint: /v2/room/%s/history/latest
+  method: GET
+  path_params:
+    - room_id
+view_room_history:
+  descr: "Fetch chat history for this room.NOTE:According to ISO-8601 the plus sign '+' is used for specifying the time offset from UTC. But '+' in a GET query is recognized as a whitespace by the API HTTP-server. For specifying the time offset, replace the character by '%2B' in the GET query.To fetch the history before '2015-06-16T15:33:30+01:00' you would use the query 'http://hipchat.com/v2/room/513/history?date=2015-06-16T15:33:30%2B01:00' (plus is replaced by '%2B').It's possible to specify the date using UNIX timestamp format: 'http://hipchat.com/v2/room/513/history?date=1434465210'.Same thing for the end-date parameter.Authentication required, with scope view_group or view_messages. Accessible by group clients, room clients, users."
+  doc_url: https://www.hipchat.com/docs/apiv2/method/view_room_history
+  endpoint: /v2/room/%s/history
+  method: GET
+  path_params:
+    - room_id
+view_user:
+  descr: "Get a user's details.Authentication required, with scope view_group. Accessible by group clients, users."
+  doc_url: https://www.hipchat.com/docs/apiv2/method/view_user
+  endpoint: /v2/user/%s
+  method: GET
+  path_params:
+    - id
